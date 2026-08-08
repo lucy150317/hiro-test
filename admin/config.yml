@@ -1,0 +1,83 @@
+# ==========================================================================
+#  広島日仏協会サイト  管理画面（Sveltia CMS / Decap CMS 互換）設定ファイル
+#  ここで「担当者が編集できる項目」を決めています。
+#  デザイン部分は編集画面には出さないので、レイアウトが崩れる心配はありません。
+# --------------------------------------------------------------------------
+#  ★ 公開前に必ず1か所だけ書き換えてください：
+#     下の repo: の「YOUR-GITHUB-USER/YOUR-REPO」を、
+#     実際に作ったGitHubリポジトリ名（例：hiro-sfj/hiro-sfj-web）に変更。
+# ==========================================================================
+
+backend:
+  name: github
+  repo: YOUR-GITHUB-USER/YOUR-REPO   # ← ここを自分のリポジトリ名に変更
+  branch: main
+
+# 画像やPDFをこの管理画面からアップロードしたい場合の保存先（今回は主にURL貼り付けなので任意）
+media_folder: "pdf"
+public_folder: "/pdf"
+
+locale: ja
+
+collections:
+  - name: content
+    label: サイトの内容
+    description: 各セクションの中身を編集できます。
+    files:
+
+      # ---- 上部の赤い「お知らせ」帯 ----
+      - name: notice
+        label: お知らせ（上部の赤い帯）
+        file: content/notice.json
+        fields:
+          - { name: text,      label: お知らせの文章, widget: string }
+          - { name: linkLabel, label: リンクの表示文字（任意）, widget: string, required: false }
+          - { name: url,       label: リンク先URL（任意）,       widget: string, required: false }
+
+      # ---- フランス語講座 ----
+      - name: courses
+        label: フランス語講座
+        file: content/courses.json
+        fields:
+          - name: items
+            label: 項目一覧
+            label_singular: 項目
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { name: tag,   label: 分類ラベル, widget: select, options: ["案内", "講座", "検定"], default: "講座" }
+              - { name: title, label: タイトル,   widget: string }
+              - { name: url,   label: リンク先URL（PDFや別ページ／空欄なら文字だけ表示）, widget: string, required: false }
+              - { name: pdf,   label: PDFマークを付ける, widget: boolean, default: true, required: false }
+
+      # ---- フランス文化活動 ----
+      - name: culture
+        label: フランス文化活動
+        file: content/culture.json
+        fields:
+          - name: items
+            label: 項目一覧
+            label_singular: 項目
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { name: tag,   label: 分類ラベル, widget: select, options: ["文化", "記録", "協会"], default: "文化" }
+              - { name: title, label: タイトル,   widget: string }
+              - { name: url,   label: リンク先URL（任意）, widget: string, required: false }
+              - { name: pdf,   label: PDFマークを付ける, widget: boolean, default: true, required: false }
+
+      # ---- 広島日仏協会報 ----
+      - name: bulletin
+        label: 広島日仏協会報
+        file: content/bulletin.json
+        fields:
+          - name: items
+            label: 号の一覧
+            label_singular: 号
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { name: tag,   label: 分類ラベル, widget: select, options: ["協会報"], default: "協会報" }
+              - { name: title, label: タイトル（例：第218号）, widget: string }
+              - { name: url,   label: リンク先URL（PDF）, widget: string, required: false }
+              - { name: pdf,   label: PDFマークを付ける, widget: boolean, default: true, required: false }

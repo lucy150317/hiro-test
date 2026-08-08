@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "tag": "案内",
+      "title": "広島日仏学院について",
+      "url": "https://hiro-sfj.server-shared.com/centre-1.html",
+      "pdf": false
+    },
+    {
+      "tag": "講座",
+      "title": "講座案内",
+      "url": "https://hiro-sfj.server-shared.com/koza'26.pdf",
+      "pdf": true
+    },
+    {
+      "tag": "講座",
+      "title": "2026年度 夏季7月期フランス語講座（令和8年6月22日開講）",
+      "url": "https://hiro-sfj.server-shared.com/'26%20kaki.pdf",
+      "pdf": true
+    },
+    {
+      "tag": "検定",
+      "title": "2026年度 実用仏語技能検定試験 広島会場",
+      "url": "https://hiro-sfj.server-shared.com/dapf'26.pdf",
+      "pdf": true
+    }
+  ]
+}

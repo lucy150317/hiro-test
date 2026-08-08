@@ -2,26 +2,8 @@
   "items": [
     {
       "tag": "文化",
-      "title": "フランス文化講座",
-      "url": "",
-      "pdf": false
-    },
-    {
-      "tag": "文化",
       "title": "フランス文化講演会",
       "url": "confe2026.pdf",
-      "pdf": true
-    },
-    {
-      "tag": "記録",
-      "title": "「フランス戦没者記憶協会」記念式および日本語説明板除幕式（2021年11月19日）",
-      "url": "bochi.pdf",
-      "pdf": true
-    },
-    {
-      "tag": "協会",
-      "title": "広島日仏協会について",
-      "url": "societe.pdf",
       "pdf": true
     }
   ]

@@ -10,7 +10,7 @@
 
 backend:
   name: github
-  repo: YOUR-GITHUB-USER/YOUR-REPO   # ← ここを自分のリポジトリ名に変更
+  repo: lucy150317/hiro-test   # ← ここを自分のリポジトリ名に変更
   branch: main
 
 # 画像やPDFをこの管理画面からアップロードしたい場合の保存先（今回は主にURL貼り付けなので任意）
